@@ -1156,7 +1156,7 @@ define('draw/Canvas',["react", "react-class", "./Group"], function Canvas(React,
 
 
 
-define('tcg/layout/Kind.js',["react", "react-class"], function Kind(React, ReactClass) {
+define('tcg/ygo/layout/Kind.js',["react", "react-class"], function Kind(React, ReactClass) {
 
     return {
 
@@ -1796,7 +1796,7 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 
 
 
-define('tcg/Resources',[], function()
+define('tcg/ygo/Resources',[], function()
 
 {
 
@@ -1808,7 +1808,7 @@ define('tcg/Resources',[], function()
 
 });
 
-define('tcg/Rarities',["./Resources"], function(resources)
+define('tcg/ygo/Rarities',["./Resources"], function(resources)
 
 {
 
@@ -1904,7 +1904,7 @@ define('tcg/Rarities',["./Resources"], function(resources)
 
 
 
-define('tcg/layout/component/CardName',["react", "react-class", "draw/Text", "../../Rarities"], function CardName(React, ReactClass, Text, Rarities)
+define('tcg/ygo/layout/component/CardName',["react", "react-class", "draw/Text", "../../Rarities"], function CardName(React, ReactClass, Text, Rarities)
 
 {
 
@@ -2088,7 +2088,7 @@ define('tcg/layout/component/CardName',["react", "react-class", "draw/Text", "..
 
 
 
-define('tcg/Attributes',["./Resources"], function Attributes(resources)
+define('tcg/ygo/Attributes',["./Resources"], function Attributes(resources)
 
 {
 
@@ -2286,7 +2286,7 @@ define('draw/Image',["react", "react-class"], function Image(React, ReactClass)
 
 
 
-define('tcg/layout/component/Attribute',["react", "react-class", "../../Attributes", "draw/Image"],
+define('tcg/ygo/layout/component/Attribute',["react", "react-class", "../../Attributes", "draw/Image"],
 
 function Attribute(React, ReactClass, Attributes, Image)
 
@@ -2418,7 +2418,7 @@ function Attribute(React, ReactClass, Attributes, Image)
 
 
 
-define('tcg/layout/component/Border',["react", "react-class", "draw/Image", "../../Resources"],
+define('tcg/ygo/layout/component/Border',["react", "react-class", "draw/Image", "../../Resources"],
 
 function Border(React, ReactClass, Image, resources) {
 
@@ -2428,7 +2428,7 @@ function Border(React, ReactClass, Image, resources) {
 
 		{
 
-			let border = resources + "/tcg/border/" + this.props.value + ".png";
+			let border = resources + "/tcg/ygo/border/" + this.props.value + ".png";
 
             let isAnime = this.props.variant === "Anime";
 
@@ -2510,7 +2510,7 @@ function Border(React, ReactClass, Image, resources) {
 
 
 
-define('tcg/layout/component/Image',["react", "react-class", "draw/Image", "../../Rarities"], function Image(React, ReactClass, Img, Rarities)
+define('tcg/ygo/layout/component/Image',["react", "react-class", "draw/Image", "../../Rarities"], function Image(React, ReactClass, Img, Rarities)
 
 {
 
@@ -2676,7 +2676,7 @@ define('tcg/layout/component/Image',["react", "react-class", "draw/Image", "../.
 
 
 
-define('tcg/Stars',["./Resources"], function(resources)
+define('tcg/ygo/Stars',["./Resources"], function(resources)
 
 {
 
@@ -2704,7 +2704,7 @@ define('tcg/Stars',["./Resources"], function(resources)
 
 
 
-define('tcg/layout/component/Level',["react", "react-class", "../../Stars", "draw/Group", "draw/Image", "draw/Text"],
+define('tcg/ygo/layout/component/Level',["react", "react-class", "../../Stars", "draw/Group", "draw/Image", "draw/Text"],
 
 function Level(React, ReactClass, Stars, Group, Image, Text)
 
@@ -3130,7 +3130,7 @@ function Level(React, ReactClass, Stars, Group, Image, Text)
 
 
 
-define('tcg/Icons',["./Resources"], function(resources)
+define('tcg/ygo/Icons',["./Resources"], function(resources)
 
 {
 
@@ -3160,7 +3160,7 @@ define('tcg/Icons',["./Resources"], function(resources)
 
 
 
-define('tcg/layout/component/Type',["react", "react-class", "draw/Group", "draw/Image", "draw/Text", "../../Icons", "../../Resources"],
+define('tcg/ygo/layout/component/Type',["react", "react-class", "draw/Group", "draw/Image", "draw/Text", "../../Icons", "../../Resources"],
 
 function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
 
@@ -3590,7 +3590,7 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
 
             let openingBrace = React.createElement(Image, {
 
-                src: resources + "/tcg/text/leftbracket" + suffix + ".png",
+                src: resources + "/tcg/ygo/text/leftbracket" + suffix + ".png",
 
                 key: "openBrace",
 
@@ -3600,7 +3600,7 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
 
             let closingBrace = React.createElement(Image, {
 
-                src: resources + "/tcg/text/rightbracket" + suffix + ".png",
+                src: resources + "/tcg/ygo/text/rightbracket" + suffix + ".png",
 
                 key: "closeBrace",
 
@@ -3816,7 +3816,7 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
 
 
 
-define('tcg/layout/component/Effect',["react", "react-class", "draw/Text"], function Effect(React, ReactClass, Text)
+define('tcg/ygo/layout/component/Effect',["react", "react-class", "draw/Text"], function Effect(React, ReactClass, Text)
 
 {
 
@@ -4084,7 +4084,7 @@ define('tcg/layout/component/Effect',["react", "react-class", "draw/Text"], func
 
 
 
-define('tcg/layout/component/Atk',["react", "react-class", "draw/Text", "draw/Image"], function Atk(React, ReactClass, Text, Image)
+define('tcg/ygo/layout/component/Atk',["react", "react-class", "draw/Text", "draw/Image"], function Atk(React, ReactClass, Text, Image)
 
 {
 
@@ -4194,7 +4194,7 @@ define('tcg/layout/component/Atk',["react", "react-class", "draw/Text", "draw/Im
 
                 return React.createElement(Image, {
 
-                    src: "../res/tcg/text/infinityanime.png",
+                    src: "../res/tcg/ygo/text/infinityanime.png",
 
                     style: styles.AnimeInfinity,
 
@@ -4240,7 +4240,7 @@ define('tcg/layout/component/Atk',["react", "react-class", "draw/Text", "draw/Im
 
 
 
-define('tcg/layout/component/Def',["react", "react-class", "draw/Text", "draw/Image"], function Def(React, ReactClass, Text, Image)
+define('tcg/ygo/layout/component/Def',["react", "react-class", "draw/Text", "draw/Image"], function Def(React, ReactClass, Text, Image)
 
 {
 
@@ -4350,7 +4350,7 @@ define('tcg/layout/component/Def',["react", "react-class", "draw/Text", "draw/Im
 
                 return React.createElement(Image, {
 
-                    src: "../res/tcg/text/infinityanime.png",
+                    src: "../res/tcg/ygo/text/infinityanime.png",
 
                     style: styles.AnimeInfinity,
 
@@ -4398,7 +4398,7 @@ define('tcg/layout/component/Def',["react", "react-class", "draw/Text", "draw/Im
 
 
 
-define('tcg/layout/component/Pendulum',["react", "react-class", "draw/Group", "draw/Text"],
+define('tcg/ygo/layout/component/Pendulum',["react", "react-class", "draw/Group", "draw/Text"],
 
 function Pendulum(React, ReactClass, Group, Text)
 
@@ -4800,7 +4800,7 @@ function Pendulum(React, ReactClass, Group, Text)
 
 
 
-define('tcg/layout/component/Link',["react", "react-class", "draw/Text"], function Link(React, ReactClass, Text)
+define('tcg/ygo/layout/component/Link',["react", "react-class", "draw/Text"], function Link(React, ReactClass, Text)
 
 {
 
@@ -4868,7 +4868,7 @@ define('tcg/layout/component/Link',["react", "react-class", "draw/Text"], functi
 
 
 
-define('tcg/layout/component/Serial',["react", "react-class", "draw/Text"], function Serial(React, ReactClass, Text)
+define('tcg/ygo/layout/component/Serial',["react", "react-class", "draw/Text"], function Serial(React, ReactClass, Text)
 
 {
 
@@ -4958,7 +4958,7 @@ define('tcg/layout/component/Serial',["react", "react-class", "draw/Text"], func
 
 
 
-define('tcg/layout/component/Copyright',["react", "react-class", "draw/Text"], function Copyright(React, ReactClass, Text)
+define('tcg/ygo/layout/component/Copyright',["react", "react-class", "draw/Text"], function Copyright(React, ReactClass, Text)
 
 {
 
@@ -5020,7 +5020,7 @@ define('tcg/layout/component/Copyright',["react", "react-class", "draw/Text"], f
 
 
 
-define('tcg/layout/component/LinkMarkers',["react", "react-class", "draw/Group", "draw/Image", "../../Resources"], function LinkMarkers(React, ReactClass, Group, Image, Resources)
+define('tcg/ygo/layout/component/LinkMarkers',["react", "react-class", "draw/Group", "draw/Image", "../../Resources"], function LinkMarkers(React, ReactClass, Group, Image, Resources)
 
 {
 
@@ -5330,7 +5330,7 @@ define('tcg/layout/component/LinkMarkers',["react", "react-class", "draw/Group",
 
 
 
-	var path = Resources + "/tcg/marker";
+	var path = Resources + "/tcg/ygo/marker";
 
 	var LinkMarkers = ReactClass({
 
@@ -5442,7 +5442,7 @@ define('tcg/layout/component/LinkMarkers',["react", "react-class", "draw/Group",
 
 
 
-define('tcg/layout/component/Id',["react", "react-class", "draw/Text"], function Id(React, ReactClass, Text)
+define('tcg/ygo/layout/component/Id',["react", "react-class", "draw/Text"], function Id(React, ReactClass, Text)
 
 {
 
@@ -5564,7 +5564,7 @@ define('tcg/layout/component/Id',["react", "react-class", "draw/Text"], function
 
 
 
-define('tcg/layout/component/CardHolo',["react", "react-class", "draw/Image", "../../Resources", "../../Rarities"],
+define('tcg/ygo/layout/component/CardHolo',["react", "react-class", "draw/Image", "../../Resources", "../../Rarities"],
 
 function CardHolo(React, ReactClass, Image, resources, Rarities) {
 
@@ -5614,7 +5614,7 @@ function CardHolo(React, ReactClass, Image, resources, Rarities) {
 
 
 
-define('tcg/layout/component/All',[
+define('tcg/ygo/layout/component/All',[
 
 	"./CardName",
 
@@ -5692,7 +5692,7 @@ define('tcg/layout/component/All',[
 
 
 
-define('tcg/layout/Normal',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Normal',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Normal(React, ReactClass, Group, Kind, C) {
 
@@ -5886,7 +5886,7 @@ function Normal(React, ReactClass, Group, Kind, C) {
 
 
 
-			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/border/Normal.pendulum.png" : "res/tcg/border/Normal.png"}))
+			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Normal.pendulum.png" : "res/tcg/ygo/border/Normal.png"}))
 
 		}
 
@@ -5910,7 +5910,7 @@ function Normal(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Effect',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Effect',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Effect(React, ReactClass, Group, Kind, C) {
 
@@ -6102,7 +6102,7 @@ function Effect(React, ReactClass, Group, Kind, C) {
 
 
 
-			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/border/Effect.pendulum.png" : "res/tcg/border/Effect.png"}))
+			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Effect.pendulum.png" : "res/tcg/ygo/border/Effect.png"}))
 
 		}
 
@@ -6126,7 +6126,7 @@ function Effect(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Ritual',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Ritual',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Ritual(React, ReactClass, Group, Kind, C) {
 
@@ -6338,7 +6338,7 @@ function Ritual(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Fusion',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Fusion',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Fusion(React, ReactClass, Group, Kind, C) {
 
@@ -6530,7 +6530,7 @@ function Fusion(React, ReactClass, Group, Kind, C) {
 
 
 
-			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/border/Fusion.pendulum.png" : "res/tcg/border/Fusion.png"}))
+			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Fusion.pendulum.png" : "res/tcg/ygo/border/Fusion.png"}))
 
 		}
 
@@ -6554,7 +6554,7 @@ function Fusion(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Synchro',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Synchro',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Synchro(React, ReactClass, Group, Kind, C) {
 
@@ -6766,7 +6766,7 @@ function Synchro(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/DarkSynchro',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/DarkSynchro',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function DarkSynchro(React, ReactClass, Group, Kind, C) {
 
@@ -6932,7 +6932,7 @@ function DarkSynchro(React, ReactClass, Group, Kind, C) {
 
 // TODO: stance attributes
 
-define('tcg/layout/Epoch',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Epoch',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Epoch(React, ReactClass, Group, Kind, C) {
 
@@ -7080,7 +7080,7 @@ function Epoch(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Warp',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Warp',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Synchro(React, ReactClass, Group, Kind, C) {
 
@@ -7232,7 +7232,7 @@ function Synchro(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Unity',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Unity',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Unity(React, ReactClass, Group, Kind, C) {
 
@@ -7374,7 +7374,7 @@ function Unity(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Xyz',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Xyz',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Xyz(React, ReactClass, Group, Kind, C) {
 
@@ -7600,7 +7600,7 @@ function Xyz(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Link',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Link',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Link(React, ReactClass, Group, Kind, C) {
 
@@ -7782,7 +7782,7 @@ function Link(React, ReactClass, Group, Kind, C) {
 
 
 
-			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/border/Link.pendulum.png" : "res/tcg/border/Link.png"}))
+			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Link.pendulum.png" : "res/tcg/ygo/border/Link.png"}))
 
 		}
 
@@ -7808,7 +7808,7 @@ function Link(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Token',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Token',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Token(React, ReactClass, Group, Kind, C) {
 
@@ -7998,7 +7998,7 @@ function Token(React, ReactClass, Group, Kind, C) {
 
 
 
-			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/border/Token.pendulum.png" : "res/tcg/border/Token.png"}))
+			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Token.pendulum.png" : "res/tcg/ygo/border/Token.png"}))
 
 		}
 
@@ -8022,7 +8022,7 @@ function Token(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Spell',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Spell',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Spell(React, ReactClass, Group, Kind, C) {
 
@@ -8178,7 +8178,7 @@ function Spell(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Trap',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Trap',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Trap(React, ReactClass, Group, Kind, C) {
 
@@ -8334,7 +8334,7 @@ function Trap(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/Skill',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Skill',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Skill(React, ReactClass, Group, Kind, C) {
 
@@ -8438,7 +8438,7 @@ function Skill(React, ReactClass, Group, Kind, C) {
 
 // TODO: stance attributes
 
-define('tcg/layout/Rainbow',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
+define('tcg/ygo/layout/Rainbow',["react", "react-class", "draw/Group", "./Kind.js", "./component/All"],
 
 function Rainbow(React, ReactClass, Group, Kind, C) {
 
@@ -8660,7 +8660,7 @@ function Rainbow(React, ReactClass, Group, Kind, C) {
 
 
 
-define('tcg/layout/All',[
+define('tcg/ygo/layout/All',[
 
 	"./Normal",
 
@@ -8740,7 +8740,7 @@ function ygo_template_all(Normal, Effect, Ritual, Fusion, Synchro, DarkSynchro, 
 
 
 
-define('tcg/Card',["react", "react-class", "draw/Canvas", "./layout/All", "./layout/Kind.js", "./Attributes", "./Stars", "./Icons", "./Rarities"],
+define('tcg/ygo/Card',["react", "react-class", "draw/Canvas", "./layout/All", "./layout/Kind.js", "./Attributes", "./Stars", "./Icons", "./Rarities"],
 
 function App(React, ReactClass, Canvas, Layouts, Kind, Attributes, Stars, Icons, Rarities)
 
@@ -8858,7 +8858,7 @@ g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d))}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<
 
 
 
-define('tcg/Checkbox',["react", "react-class"], function(React, ReactClass){
+define('tcg/ygo/Checkbox',["react", "react-class"], function(React, ReactClass){
 
 	return function(props)
 
@@ -8894,7 +8894,7 @@ define('tcg/Checkbox',["react", "react-class"], function(React, ReactClass){
 
 });
 
-define('tcg/CardMaker',["react", "react-class", "./Card", "webfont", "./Checkbox"], function App(React, ReactClass, Card, WebFont, Checkbox)
+define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Checkbox"], function App(React, ReactClass, Card, WebFont, Checkbox)
 
 {
 
@@ -11020,7 +11020,7 @@ define('tcg/CardMaker',["react", "react-class", "./Card", "webfont", "./Checkbox
 
 
 
-define('App',["react", "react-class", "tcg/CardMaker"], function App(React, ReactClass, YGOCardMaker)
+define('App',["react", "react-class", "tcg/ygo/CardMaker"], function App(React, ReactClass, YGOCardMaker)
 
 {
 

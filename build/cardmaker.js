@@ -8722,17 +8722,17 @@ function ygo_template_all(Normal, Effect, Ritual, Fusion, Synchro, DarkSynchro, 
 
 		Trap: { value: "Trap", fn: Trap },
 
-		Skill: { value: "Skill", fn: Skill },
+		// Skill: { value: "Skill", fn: Skill },
 
-		DarkSynchro: { value: "DarkSynchro", name: "Dark Synchro", fn: DarkSynchro },
+		// DarkSynchro: { value: "DarkSynchro", name: "Dark Synchro", fn: DarkSynchro },
 
-		Epoch: { value: "Epoch", name: "Bigbang", fn: Epoch },
+		// Epoch: { value: "Epoch", name: "Bigbang", fn: Epoch },
 
-		Warp: { value: "Warp", name: "Time Leap", fn: Warp },
+		// Warp: { value: "Warp", name: "Time Leap", fn: Warp },
 
-		Unity: { value: "Unity", fn: Unity },
+		// Unity: { value: "Unity", fn: Unity },
 
-		Rainbow: { value: "Rainbow", fn: Rainbow },
+		// Rainbow: { value: "Rainbow", fn: Rainbow },
 
 	};
 
@@ -9570,9 +9570,9 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
                 e("button", { onClick: this.save, className: "ipsButton ipsButton_primary" }, "Save Card"),
 
-                e("button", { onClick: this.exportAsPrompt, className: "ipsButton ipsButton_primary" }, "Export As"),
+                // e("button", { onClick: this.exportAsPrompt, className: "ipsButton ipsButton_primary" }, "Export As"),
 
-                e("button", { onClick: this.open, className: "ipsButton ipsButton_primary" }, "Load Card"),
+                // e("button", { onClick: this.open, className: "ipsButton ipsButton_primary" }, "Load Card"),
 
                 // e("button", { onClick: this.link1, className: "ipsButton ipsButton_primary gold", title: "YGOPRO is a free automatic Yu-Gi-Oh! online game. All cards are available and new cards are added as soon as they are announced. Click here to download YGOPRO." }, "YGOPRO"),
 
@@ -9868,21 +9868,21 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
 
 
-                    e("div", { "className": "special" },
+                    // e("div", { "className": "special" },
 
-                        e("label", null, "Add Special Characters"),
+                    //     e("label", null, "Add Special Characters"),
 
-                        makeTextAdder("∞"),
+                    //     makeTextAdder("∞"),
 
-                        makeTextAdder("☆"),
+                    //     makeTextAdder("☆"),
 
-                        makeTextAdder("●"),
+                    //     makeTextAdder("●"),
 
-                        makeTextAdder("©"),
+                    //     makeTextAdder("©"),
 
-                        makeTextAdder("™"),
+                    //     makeTextAdder("™"),
 
-                    ),
+                    // ),
 
 
 
@@ -9890,7 +9890,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
 
 
-                    e("button", { onClick: this.developer }, "Developer Features"),
+                    // e("button", { onClick: this.developer }, "Developer Features"),
 
                 ),
 

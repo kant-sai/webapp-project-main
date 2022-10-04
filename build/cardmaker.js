@@ -2116,9 +2116,9 @@ define('tcg/ygo/Attributes',["./Resources"], function Attributes(resources)
 
 		Trap:     { url: [path, "Trap.png"].join("/") },
 
-        Rainbow:  { url: [path, "Rainbow.png"].join("/") },
+        // Rainbow:  { url: [path, "Rainbow.png"].join("/") },
 
-        Void:     { url: [path, "Void.png"].join("/") },
+        // Void:     { url: [path, "Void.png"].join("/") },
 
 	};
 
@@ -3418,31 +3418,31 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
 
     		},
 
-    		// LargePendulumMonster: {
+    		LargePendulumMonster: {
 
-    		// 	fontFamily: ["Stone Serif Small Caps", "Matrix Regular Small Caps", "Stone Serif Regular", "Spectral SC", "serif"],
+    			fontFamily: ["Stone Serif Small Caps", "Matrix Regular Small Caps", "Stone Serif Regular", "Spectral SC", "serif"],
 
-    		// 	fontSize: 16,
+    			fontSize: 16,
 
-    		// 	fontWeight: 400,
+    			fontWeight: 400,
 
-    		// 	textAlign: "left",
+    			textAlign: "left",
 
-    		// 	whitespace: "nowrap",
+    			whitespace: "nowrap",
 
-            //
+            
 
-    		// 	// left: 30,
+    			// left: 30,
 
-    		// 	left: 36,
+    			left: 36,
 
-    		// 	top: 477,
+    			top: 477,
 
-    		// 	width: 350,
+    			width: 350,
 
-    		// 	height: 30
+    			height: 30
 
-    		// },
+    		},
 
     		Backrow: {
 
@@ -3552,15 +3552,15 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
 
                 },
 
-                // LargePendulumMonster: {
+                LargePendulumMonster: {
 
-                //     width: 5,
+                    width: 5,
 
-                //     height: 15,
+                    height: 15,
 
-                //     top: 465+16,
+                    top: 465+16,
 
-                // },
+                },
 
                 Backrow: {
 
@@ -5886,7 +5886,7 @@ function Normal(React, ReactClass, Group, Kind, C) {
 
 
 
-			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Normal.pendulum.png" : "res/tcg/ygo/border/Normal.png"}))
+			return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Normal.pendulum.png" : "res/tcg/ygo/border/Normal.png"}))
 
 		}
 
@@ -6102,7 +6102,7 @@ function Effect(React, ReactClass, Group, Kind, C) {
 
 
 
-			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Effect.pendulum.png" : "res/tcg/ygo/border/Effect.png"}))
+			return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Effect.pendulum.png" : "res/tcg/ygo/border/Effect.png"}))
 
 		}
 
@@ -6530,7 +6530,7 @@ function Fusion(React, ReactClass, Group, Kind, C) {
 
 
 
-			//return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Fusion.pendulum.png" : "res/tcg/ygo/border/Fusion.png"}))
+			return React.createElement(Shared, Object.assign({}, this.props, { border: this.props.pendulum.enabled ? "res/tcg/ygo/border/Fusion.pendulum.png" : "res/tcg/ygo/border/Fusion.png"}))
 
 		}
 
@@ -8810,7 +8810,7 @@ function App(React, ReactClass, Canvas, Layouts, Kind, Attributes, Stars, Icons,
 
         "Normal": "Normal",
 
-        "Anime": "Anime",
+        // "Anime": "Anime",
 
         "Rush": "Rush",
 
@@ -9574,9 +9574,9 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
                 e("button", { onClick: this.open, className: "ipsButton ipsButton_primary" }, "Load Card"),
 
-                e("button", { onClick: this.link1, className: "ipsButton ipsButton_primary gold", title: "YGOPRO is a free automatic Yu-Gi-Oh! online game. All cards are available and new cards are added as soon as they are announced. Click here to download YGOPRO." }, "YGOPRO"),
+                // e("button", { onClick: this.link1, className: "ipsButton ipsButton_primary gold", title: "YGOPRO is a free automatic Yu-Gi-Oh! online game. All cards are available and new cards are added as soon as they are announced. Click here to download YGOPRO." }, "YGOPRO"),
 
-                e("button", { onClick: this.link2, className: "ipsButton ipsButton_primary gold" }, "Discord"),
+                // e("button", { onClick: this.link2, className: "ipsButton ipsButton_primary gold" }, "Discord"),
 
             ];
 
@@ -9716,7 +9716,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
                         e("tr", null,
 
-                            e("td", { colSpan: 2 }, e("label", null, labelText("Image"), e("input", { onChange: this.updateField("card.image"), type: "text" }), e("input", { onChange: this.updateCardImage("image"), type: "file" })))
+                            e("td" , { colSpan: 2 }, e("label", null, labelText("Image from URL"), e("input", { onChange: this.updateField("card.image"), type: "text"}), e("input", { onChange: this.updateCardImage("image"), type: "file" })))
 
                         ),
 
@@ -9886,7 +9886,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
 
 
-                    e("button", { onClick: this.credits }, "Credits"),
+                    // e("button", { onClick: this.credits }, "Credits"),
 
 
 
@@ -10199,8 +10199,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
 
             result.pendulum = blankPendulum;
-
-
+			
 
             result.name = entry.name;
 

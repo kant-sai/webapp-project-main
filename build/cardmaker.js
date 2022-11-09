@@ -150,16 +150,6 @@ var requirejs, require, define;
 
                 } else if (part === '..') {
 
-                    // If at the start, or previous value is still ..,
-
-                    // keep them so that when converted to a path it may
-
-                    // still work when converted to a path, even though
-
-                    // as an ID it is less than ideal. In larger point
-
-                    // releases, may be better to just kick out an error.
-
                     if (i === 0 || (i === 1 && name[2] === '..') || name[i - 1] === '..') {
 
                         continue;
@@ -212,9 +202,7 @@ var requirejs, require, define;
 
 
 
-                        //baseName segment has  config, find if it has one for
-
-                        //this name.
+                        //baseName segment has  config, find if it has one for this name.
 
                         if (mapValue) {
 
@@ -245,14 +233,6 @@ var requirejs, require, define;
                     break;
 
                 }
-
-
-
-                //Check for a star map match, but just hold on to it,
-
-                //if there is a shorter segment match later in a matching
-
-                //config, then favor over this star map.
 
                 if (!foundStarMap && starMap && starMap[nameSegment]) {
 
@@ -298,21 +278,10 @@ var requirejs, require, define;
 
         return function () {
 
-            //A version of a require function that passes a moduleName
-
-            //value for items that may need to
-
-            //look up paths relative to the moduleName
+            //value for items that may need to look up paths relative to the moduleName
 
             var args = aps.call(arguments, 0);
 
-
-
-            //If first arg is not require('string'), and there is only
-
-            //one arg, it is the array form without a callback. Insert
-
-            //a null so that the following concat is correct.
 
             if (typeof args[0] !== 'string' && args.length === 1) {
 
@@ -382,9 +351,7 @@ var requirejs, require, define;
 
     //Turns a plugin!resource to [plugin, resource]
 
-    //with the plugin being undefined if the name
-
-    //did not have a plugin prefix.
+    //with the plugin being undefined if the name did not have a plugin prefix.
 
     function splitPrefix(name) {
 
@@ -407,7 +374,7 @@ var requirejs, require, define;
 
 
     //Creates a parts array for a relName where first part is plugin ID,
-
+	
     //second part is resource ID. Assumes relName has already been normalized.
 
     function makeRelParts(relName) {
@@ -420,9 +387,7 @@ var requirejs, require, define;
 
     /**
 
-     * Makes a name map, normalizing the name, and using a plugin
-
-     * for normalization if necessary. Grabs a ref to plugin
+     * Makes a name map, normalizing the name, and using a plugin for normalization if necessary. Grabs a ref to plugin
 
      * too, as an optimization.
 
@@ -488,7 +453,6 @@ var requirejs, require, define;
 
 
 
-        //Using ridiculous property names for space reasons
 
         return {
 
@@ -600,17 +564,12 @@ var requirejs, require, define;
 
                 depName = map.f;
 
-
-
-                //Fast path CommonJS standard dependencies.
-
                 if (depName === "require") {
 
                     args[i] = handlers.require(name);
 
                 } else if (depName === "exports") {
 
-                    //CommonJS module spec 1.1
 
                     args[i] = handlers.exports(name);
 
@@ -618,7 +577,6 @@ var requirejs, require, define;
 
                 } else if (depName === "module") {
 
-                    //CommonJS module spec 1.1
 
                     cjsModule = args[i] = handlers.module(name);
 
@@ -700,14 +658,6 @@ var requirejs, require, define;
 
             }
 
-            //Just return the module wanted. In this scenario, the
-
-            //deps arg is the module name, and second arg (if passed)
-
-            //is just the relName.
-
-            //Normalize module name, if it contains . or ..
-
             return callDep(makeMap(deps, makeRelParts(callback)).f);
 
         } else if (!deps.splice) {
@@ -756,12 +706,6 @@ var requirejs, require, define;
 
         callback = callback || function () {};
 
-
-
-        //If relName is a function, it is an errback handler,
-
-        //so remove it.
-
         if (typeof relName === 'function') {
 
             relName = forceSync;
@@ -780,18 +724,6 @@ var requirejs, require, define;
 
         } else {
 
-            //Using a non-zero value because of concern for what old browsers
-
-            //do, and latest browsers "upgrade" to 4 if lower value is used:
-
-            //http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#dom-windowtimers-settimeout:
-
-            //If want a value immediately, use require('id') instead -- something
-
-            //that works in almond on the global level, but not guaranteed and
-
-            //unlikely to work in other AMD implementations.
-
             setTimeout(function () {
 
                 main(undef, deps, callback, relName);
@@ -805,16 +737,6 @@ var requirejs, require, define;
         return req;
 
     };
-
-
-
-    /**
-
-     * Just drops the config on the floor, but returns req in case
-
-     * the config return value is used.
-
-     */
 
     req.config = function (cfg) {
 
@@ -842,17 +764,7 @@ var requirejs, require, define;
 
         }
 
-
-
-        //This module may not have dependencies
-
         if (!deps.splice) {
-
-            //deps is not an array, so probably means
-
-            //an object literal or factory function for
-
-            //the value. Adjust args.
 
             callback = deps;
 
@@ -990,13 +902,11 @@ define('draw/Group',["react", "react-class"], function Group(React, ReactClass)
 
 		{
 
-			// Determine whether this group is in the top of the hierarchy.
+			// Determine whether this group is in the top of the hierarchy. If it is, no further propagation is needed.
 
 			if (typeof this.props.repaint !== "function")
 
 			{
-
-				// If it is, no further propagation is needed.
 
 				this.forceUpdate();
 
@@ -1036,8 +946,6 @@ define('draw/Canvas',["react", "react-class", "./Group"], function Canvas(React,
 
 	 * Top-level container for other "draw/*" components.
 
-	 *
-
 	 * This element provides the canvas on which is descendants will draw.
 
 	 */
@@ -1049,8 +957,6 @@ define('draw/Canvas',["react", "react-class", "./Group"], function Canvas(React,
 		getInitialState: function initialState()
 
 		{
-
-			// Canvas will be created upon first render of this component.
 
 			return { canvas: null };
 
@@ -1182,12 +1088,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 
 {
 
-	/**
-
-	 * Draws styled text on a DOM canvas.
-
-	 */
-
 	var Text = ReactClass({
 
 
@@ -1226,10 +1126,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 
 		},
 
-
-
-		// Canvas won't be available on the first cycle anyway, so use "update".
-
 		componentDidUpdate: function didUpdate()
 
 		{
@@ -1254,8 +1150,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 
 				var ctx = canvas.getContext("2d");
 
-
-
 				// this.props cannot be modified by default. Make a deep copy that loses
 
 				// any read-only traits.
@@ -1277,8 +1171,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 					this.setFont(ctx, style);
 
 					paragraphs = this.createParagraphs(ctx, this.props.text, style.width);
-
-
 
 					// Calculate the height of the text, as it is needed for determining
 
@@ -1488,12 +1380,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 
 						{
 
-							// The last line of justified text is typically aligned according
-
-							// to the default alignment. Account for that by using a different
-
-							// renderer for the last line of the paragraph.
-
 							if (currentline !== (lines.length -1)) {
 
 								this.drawTextJustified(ctx, line);
@@ -1524,17 +1410,11 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 
 		{
 
-			// TODO: Account for text direction styles (rtl, ltr).
-
 			this.drawTextLeftAligned(ctx, text);
 
 		},
 
-
-
         renderText: function renderText(ctx, text, x, y) {
-
-            // console.log("RENDERTEXT", this.props);
 
             if(this.props.style.strokeWidth) {
 
@@ -1594,8 +1474,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 
 		 * Draws a single line of text that hugs the right egde.
 
-		 *
-
 		 * @param {CanvasRenderingContext2D} ctx Context used for drawing.
 
 		 * @param {String} text Text to draw.
@@ -1635,8 +1513,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 		/**
 
 		 * Draws a single line of text that hugs neither edge.
-
-		 *
 
 		 * @param {CanvasRenderingContext2D} ctx Context used for drawing.
 
@@ -1678,8 +1554,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 
 		 * Draws a single line of text that hugs the left and right egde.
 
-		 *
-
 		 * @param {CanvasRenderingContext2D} ctx Context used for drawing.
 
 		 * @param {String} text Text to draw.
@@ -1701,8 +1575,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 			var flexible = (this.props.style.width - ctx.measureText(text).width)
 
 			             / (Math.max(1, words.length-1));
-
-
 
 			// Update the position of the cursor.
 
@@ -1731,8 +1603,6 @@ define('draw/Text',["react", "react-class"], function Text(React, ReactClass)
 			// This function should only be called internally,
 
 			// hence no sanity checks.
-
-			//var style = this.props.style;
 
 			var font;
 
@@ -1860,11 +1730,7 @@ define('tcg/ygo/Rarities',["./Resources"], function(resources)
 
             name: "Mosaic rare",
 
-            // foil: [ path, "Ultimate.png" ].join("/"),
-
             foil: [ path, "Secret.png" ].join("/"),
-
-            // foil: undefined,
 
             cardFoil: [ path, "Mosaic.png" ].join("/"),
 
@@ -2116,9 +1982,6 @@ define('tcg/ygo/Attributes',["./Resources"], function Attributes(resources)
 
 		Trap:     { url: [path, "Trap.png"].join("/") },
 
-        // Rainbow:  { url: [path, "Rainbow.png"].join("/") },
-
-        // Void:     { url: [path, "Void.png"].join("/") },
 
 	};
 
@@ -2133,8 +1996,6 @@ define('draw/Image',["react", "react-class"], function Image(React, ReactClass)
 	/**
 
 	 * Image to draw on a canvas.
-
-	 *
 
 	 * In case no canvas DOM element is provided to it, it should default to
 
@@ -2252,10 +2113,6 @@ define('draw/Image',["react", "react-class"], function Image(React, ReactClass)
 
 	});
 
-	// The compiler warns about "getDefaultProps" being deprecated.
-
-	// Assigning them this way seems to solve it.
-
 	image.defaultProps = {
 
 		style: {
@@ -2297,8 +2154,6 @@ function Attribute(React, ReactClass, Attributes, Image)
         Normal: {
 
             // Positioning based on 420 × 610.
-
-            // TODO: update for 421 x 614
 
             left:  356,
 
@@ -2353,8 +2208,6 @@ function Attribute(React, ReactClass, Attributes, Image)
 		render: function render()
 
 		{
-
-            // let style = this.props.anime ? styles.Anime : styles.Normal;
 
             let style;
 
@@ -2730,8 +2583,6 @@ function Level(React, ReactClass, Stars, Group, Image, Text)
 
         		// Positioning based on 420 × 610.
 
-                // TODO: update for 421 x 614
-
         		left: 43, // (420 - width) / 2
 
         		top: 73, // Measured from the image.
@@ -2743,8 +2594,6 @@ function Level(React, ReactClass, Stars, Group, Image, Text)
         		height: 28, // Height of a star.
 
         		maxWidth: 334, // Max width of the total number of stars.
-
-
 
                 // range of levels it applies to
 
@@ -2799,8 +2648,6 @@ function Level(React, ReactClass, Stars, Group, Image, Text)
         		height: 28, // Height of a star.
 
         		maxWidth: 284, // Max width of the total number of stars.
-
-
 
                 // range of levels it applies to
 
@@ -2915,10 +2762,6 @@ function Level(React, ReactClass, Stars, Group, Image, Text)
             this.props.variant = this.props.variant || "Normal";
 
             let strategy = LevelStrategy[this.props.variant];
-
-            // console.log("Strategy:", strategy, this.props);
-
-            // Calculate the spacing between each star.
 
             let styleForLevel_12 = strategy[12];
 
@@ -3217,9 +3060,6 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
     			whitespace: "nowrap",
 
 
-
-    			// left: 30,
-
     			left: 36,
 
     			top: 461,
@@ -3242,9 +3082,6 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
 
     			whitespace: "nowrap",
 
-
-
-    			// left: 30,
 
     			left: 36,
 
@@ -3430,9 +3267,6 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
 
     			whitespace: "nowrap",
 
-            
-
-    			// left: 30,
 
     			left: 36,
 
@@ -3659,8 +3493,6 @@ function Type(React, ReactClass, Group, Image, Text, Icons, resources) {
                 Object.assign(closingBrace.props.style, baseStyle.Braces.Backrow, {
 
                     left: isRush ? width + 18 + 24 : 421-49,
-
-                    // left: 421-49,
 
                 });
 
@@ -8918,7 +8750,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
         serial: "0123456789",
 
-        copyright: "© 2020 YGOPRO.ORG",
+        copyright: "",
 
         id: "",
 
@@ -9064,7 +8896,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
             var savedata = JSON.parse(localStorage.getItem(saveDataKey));
 
-            // console.log(savedata);
+            
 
             var defaultdata = {
 
@@ -9082,15 +8914,15 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
                     icon: "None",
 
-                    effect: "A modern card designer.",
+                    effect: "Make your own custom card",
 
                     atk: "0",
 
                     def: "0",
 
-                    serial: "0123456789",
+                    serial: "0000000000",
 
-                    copyright: "© 2020 YGOPRO.ORG",
+                    copyright: "",
 
                     attribute: "None",
 
@@ -9262,7 +9094,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
             }
 
-            // console.log(kinds);
+            
 
             this.updateForKind(kinds, document);
 
@@ -9526,7 +9358,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
             // circumvent React's overwriting the value setter
 
-            // https://stackoverflow.com/a/46012210/4119004
+            
 
             let nativeInputValueSetter = Object.getOwnPropertyDescriptor(
 
@@ -9570,14 +9402,9 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
                 e("button", { onClick: this.save, className: "ipsButton ipsButton_primary" }, "Save Card"),
 
-                // e("button", { onClick: this.exportAsPrompt, className: "ipsButton ipsButton_primary" }, "Export As"),
+                e("button", { onClick: this.exportAsPrompt, className: "ipsButton ipsButton_primary" }, "Export As"),
 
-                // e("button", { onClick: this.open, className: "ipsButton ipsButton_primary" }, "Load Card"),
-
-                // e("button", { onClick: this.link1, className: "ipsButton ipsButton_primary gold", title: "YGOPRO is a free automatic Yu-Gi-Oh! online game. All cards are available and new cards are added as soon as they are announced. Click here to download YGOPRO." }, "YGOPRO"),
-
-                // e("button", { onClick: this.link2, className: "ipsButton ipsButton_primary gold" }, "Discord"),
-
+                e("button", { onClick: this.open, className: "ipsButton ipsButton_primary" }, "Load Card"),
             ];
 
             let ptag = isMobile ? "div" : "tr";
@@ -9868,29 +9695,6 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
 
 
-                    // e("div", { "className": "special" },
-
-                    //     e("label", null, "Add Special Characters"),
-
-                    //     makeTextAdder("∞"),
-
-                    //     makeTextAdder("☆"),
-
-                    //     makeTextAdder("●"),
-
-                    //     makeTextAdder("©"),
-
-                    //     makeTextAdder("™"),
-
-                    // ),
-
-
-
-                    // e("button", { onClick: this.credits }, "Credits"),
-
-
-
-                    // e("button", { onClick: this.developer }, "Developer Features"),
 
                 ),
 
@@ -9935,7 +9739,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
             // ygopro discord link
 
             window.open("https://ygopro.org/discord/", "_blank");
-
+        
         },
 
         developer: function developer() {
@@ -10265,7 +10069,7 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
 
 
-                    // console.log(regular, pend, result.effect);
+                
 
 
 
@@ -10615,8 +10419,6 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
 
 
-        // available styles: "default", "wide"
-
         popup: function (title, body, style="default") {
 
             body = EL.forceElement(body);
@@ -10895,7 +10697,6 @@ define('tcg/ygo/CardMaker',["react", "react-class", "./Card", "webfont", "./Chec
 
                 path.reverse();
 
-                // console.log("UPDATE PATH:", path);
 
                 var newState = path.reduce(function(accumulator, current)
 

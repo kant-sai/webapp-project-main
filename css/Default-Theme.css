@@ -115,6 +115,7 @@ label
 	/* Put each label on its own line. */
 
 	display: block;
+	font-size: 20px;
 
 }
 
@@ -406,7 +407,7 @@ button:active
 
 		background-position: center;
 
-		background-image: url(../res/ui/dusk/checkbox.svg);
+		background-image: url(/ui/dusk/checkbox.svg);
 
 }
 
@@ -418,7 +419,7 @@ button:active
 
 	/* Give the user feedback that it has been checked. */
 
-	background-image: url(../res/ui/dusk/checkbox-checked.svg);
+	background-image: url(/ui/dusk/checkbox-checked.svg);
 
 
 

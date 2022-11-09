@@ -121,7 +121,12 @@ html, body
 	height: 100%;
 
     
-    background: #14213d;
+    /* background: #140138; */
+    background: #0c2755;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
 
     /* position: relative; */
 
@@ -291,7 +296,7 @@ fieldset, input, select, textarea {
 
     font-weight: 700;
 
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 
     -webkit-touch-callout: none; /* iOS Safari */
 
@@ -317,7 +322,7 @@ fieldset, input, select, textarea {
 
 		position: absolute;
 
-		padding: 10px;
+		padding: 40px;
 
 		top:0;
 
@@ -425,7 +430,7 @@ fieldset, input, select, textarea {
 
 #serial-randomize {
 
-    height: 2.4em;
+    height: 3.4em;
 
     line-height: 0;
 
@@ -515,13 +520,13 @@ button.gold:hover {
 
 .live-preview button {
 
-    font-size: 1.2em;
+    font-size: 1.75em;
 
     margin: 0;
 
     margin-top: 10px;
 
-    padding: 2px;
+    padding: 20px;
 
 }
 
